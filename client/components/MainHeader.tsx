@@ -43,7 +43,7 @@ const MainHeader = () => {
 
             <div className="under">
                 {URL_DATA.map(({ title, url }) => (
-                    <Link key={title} href={`/${url}`}>
+                    <Link key={title} href={`/${url}`} passHref={true}>
                         <div className={`menu ${router.route.split("/")[1] === url ? "selected" : ""}`}>{title}</div>
                     </Link>
                 ))}
