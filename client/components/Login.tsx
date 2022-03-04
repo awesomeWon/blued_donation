@@ -7,7 +7,6 @@ import "react-toastify/dist/ReactToastify.css";
 
 const Login = ({ setOpenLoginModal }) => {
     const [user, setUser] = useRecoilState(userState);
-
     const onKakaoSuccess = (res: any) => {
         axios
             .post("/api/oAuth/kakao", { access_token: res.response.access_token })

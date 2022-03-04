@@ -1,18 +1,18 @@
+export {};
 const mongoose = require("mongoose");
 
 const tokenSchema = mongoose.Schema({
     token: { type: String },
-    expires : { type: Date }
-})
-
+    expires: { type: Date },
+});
 
 const UserSchema = mongoose.Schema(
     {
-        provider: { type: String},
+        provider: { type: String },
         name: { type: String },
         state: { type: String, default: "normal" },
-        oAuthToken : { type: String },
-        token : [tokenSchema]
+        oAuthToken: { type: String },
+        token: [tokenSchema],
     },
     { timestamps: true }
 );
