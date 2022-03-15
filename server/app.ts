@@ -6,6 +6,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
 const session = require("express-session");
+// const db = require("./db");
 
 var oAuthRouter = require("./routes/oAuth");
 var usersRouter = require("./routes/users");
@@ -38,8 +39,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("/oAuth", oAuthRouter);
-// app.use('/users', usersRouter);
+app.use("/api/oAuth", oAuthRouter);
+app.use("/api/users", usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req: any, res: any, next: any) {

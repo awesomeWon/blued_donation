@@ -1,3 +1,5 @@
+import { pool } from "../util/pool";
+
 export {};
 require("dotenv").config();
 // const fetch = (...args: any[]) => import("node-fetch").then(({ default: fetch }) => fetch(null, args));
@@ -30,6 +32,9 @@ router.post("/kakao", async (req: any, res: any) => {
 
     // 카카오 서버에서 온 토큰을 데이터 베이스 oAuthToken에서 조회
     if (!userInfo) {
+        await pool.query(`INSERT into user(oAuthToken, name, provider, state) 
+        values('${user.data.id}','${user.data.properties.nickname}','kakao','normal')
+        `);
         // 조회된 유저가 없다면 새로 생성
         const newUser = new User({
             oAuthToken: user.data.id,
