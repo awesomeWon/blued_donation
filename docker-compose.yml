@@ -34,7 +34,7 @@ services:
         # 끝
 
         # image: constwon111/blued-backend
-        container_name: blued_backend
+        # container_name: blued_backend
         volumes:
             - /app/node_modules
             - ./server:/app

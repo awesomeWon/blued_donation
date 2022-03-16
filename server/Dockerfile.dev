@@ -5,6 +5,7 @@ WORKDIR /app
 COPY ./package.json ./
 
 RUN npm install
+# RUN git config --global core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StricHostKeyChecking=no'
 
 COPY . .
 
