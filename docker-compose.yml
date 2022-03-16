@@ -2,8 +2,9 @@ version: "3"
 services:
     frontend:
         # 추가
-        dockerfile: Dockerfile.dev
-        context: ./client
+        build:
+            dockerfile: Dockerfile.dev
+            context: ./client
         # 끝
         # image: constwon111/blued-frontend
         volumes:
