@@ -6,7 +6,7 @@ var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 const mongoose = require("mongoose");
 const session = require("express-session");
-const pool = require("./util/pool");
+const { pool } = require("./util/pool");
 var oAuthRouter = require("./routes/oAuth");
 var usersRouter = require("./routes/users");
 
@@ -33,21 +33,14 @@ app.use(
 );
 
 pool.query(
-    `
-CREATE TABLE user (
+    `CREATE TABLE user (
     id INTEGER AUTO_INCREMENT UNIQUE  PRIMARY KEY,
     provider VARCHAR(100),
     name VARCHAR(10),
     state VARCHAR(20),
     oAuthToken VARCHAR(100),
     token VARCHAR(100),
-    expires DATE
-
-)`,
-    (err, results, fileds) => {
-        if (results) console.log("results", results);
-        if (err) console.log("err!", err);
-    }
+    expires DATE )`
 );
 
 app.use(logger("dev"));

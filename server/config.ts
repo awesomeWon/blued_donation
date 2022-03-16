@@ -1,11 +1,11 @@
 const dbConfig = {
-    host: "localhost",
+    host: "mysql",
     user: "root",
     password: "tndtlf98",
     database: "blued_donation",
-    waitForConnections: true,
+    // waitForConnections: true,
     connectionLimit: 10,
-    // port: "3306",
+    port: "3306",
 };
 const awsConfig = {
     keyId: "lXneXjCWC9mEsLqskROY",

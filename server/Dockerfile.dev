@@ -4,8 +4,10 @@ WORKDIR /app
 
 COPY ./package.json ./
 
+RUN npm install git --save-dev
+RUN npm install git
 RUN npm install
-# RUN git config --global core.sshCommand 'ssh -o UserKnownHostsFile=/dev/null -o StricHostKeyChecking=no'
+
 
 COPY . .
 
