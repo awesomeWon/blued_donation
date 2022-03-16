@@ -39,12 +39,12 @@ services:
             - /app/node_modules
             - ./server:/app
         # mem_limit: 128m
-        # environment:
-        #     # MYSQL_HOST: mysql
-        #     # MYSQL_USER: root
-        #     MYSQL_ROOT_PASSWORD: tndtlf98
-        #     MYSQL_DATABASE: blued_donation
-        #     # MYSQL_PORT: 3306
+        environment:
+            # MYSQL_HOST: mysql
+            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: tndtlf98
+            MYSQL_DATABASE: blued_donation
+            MYSQL_PORT: 3306
 
     mysql:
         build: ./mysql
