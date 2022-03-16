@@ -4,8 +4,7 @@ WORKDIR /app
 
 COPY ./package.json ./
 
-RUN npm install git --save-dev
-RUN npm install git
+
 RUN npm install
 
 
