@@ -14,7 +14,7 @@ before_install:
 #     - docker run -e CI=true constwon111/next-test-app npm run test
 
 after_success:
-    - docker build -f Dockerfile.dev -t constwon111/blued-frontend ./client
+    - docker build -f Dockerfile.dev -t constwon111/blued-frontend /client/
     - docker build -t constwon111/blued-backend ./server
     - docker build -t constwon111/blued-nginx ./nginx
 
