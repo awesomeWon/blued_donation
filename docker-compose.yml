@@ -17,7 +17,7 @@ services:
         restart: always
         # 추가
         build:
-            dockerfile: Dokerfile.dev
+            dockerfile: Dockerfile
             context: ./nginx
         ports:
             - "3000:80"
