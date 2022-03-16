@@ -3,7 +3,6 @@
     "version": "0.0.0",
     "private": true,
     "dependencies": {
-        "@types/mysql2": "github:types/mysql2",
         "axios": "^0.24.0",
         "body-parser": "^1.19.2",
         "concurrently": "^7.0.0",
