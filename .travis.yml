@@ -1,0 +1,36 @@
+language: generic
+
+sudo: required
+
+services:
+    - docker
+
+before_install:
+    - docker build -t constwon111/next-test-app -f ./frontend/Dockerfile.dev ./frontend
+
+script:
+    - docker run -e CI=true constwon111/next-test-app npm run test
+
+after_success:
+    - docker build -t constwon111/blued-frontend ./client
+    - docker build -t constwon111/blued-backend ./server
+    - docker build -t constwon111/blued-nginx ./nginx
+
+    - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+
+    - docker push constwon111/blued-frontend
+    - docker push constwon111/blued-backend
+    - docker push constwon111/blued-nginx
+
+deploy:
+    provider: elasticbeanstalk
+    region: "us-east-1"
+    app: "docker-fullstack-app"
+    env: "DockerFullstackApp-env"
+    bucket_name: elasticbeanstalk-us-east-1-250552661696
+    bucket_path: "docker-fullstack-app"
+    on:
+        branch: master
+
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_ACCESS_KEY
