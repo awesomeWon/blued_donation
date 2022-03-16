@@ -6,13 +6,15 @@ services:
     - docker
 
 before_install:
+    - docker build -t constwon111/blued-fontend -f Dockerfile.dev .
+
     # - docker build -t constwon111/blued- -f ./client/Dockerfile.dev ./client
 
 # script:
 #     - docker run -e CI=true constwon111/next-test-app npm run test
 
 after_success:
-    - docker build -t constwon111/blued-frontend ./client
+    - docker build -t constwon111/blued-frontend ./client -f Dockerfile.dev /client
     - docker build -t constwon111/blued-backend ./server
     - docker build -t constwon111/blued-nginx ./nginx
 
