@@ -1,19 +1,18 @@
 const API_KEY = process.env.API_KEY;
 
 module.exports = {
-    exportTrailingSlash: true,
-    exportPathMap: function () {
-        return {
-            "/": { page: "/index" },
-            "/my": { page: "/my" },
-            "/need": { page: "/need" },
-            "/oAuth": { page: "/oAuth" },
-            "/share": { page: "/share" },
-            // "/": { page: "/" }
-            // "/": { page: "/" }
-            // "/": { page: "/" }
-        };
-    },
+    // exportTrailingSlash: true,
+    // exportPathMap: function () {
+    //     return {
+    //         "/my": { page: "/my" },
+    //         "/need": { page: "/need" },
+    //         "/oAuth": { page: "/oAuth" },
+    //         "/share": { page: "/share" },
+    //         "/": { page: "/" }
+    //         "/": { page: "/" }
+    //         "/": { page: "/" }
+    //     };
+    // },
     webpack(config) {
         config.module.rules.push({
             test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
@@ -28,6 +27,10 @@ module.exports = {
             },
         });
         return config;
+    },
+    images: {
+        loader: "akamai",
+        path: "/",
     },
 };
 // distDir: "build",
