@@ -1,51 +1,35 @@
 version: "3"
 services:
     client:
-        # 추가
-        build:
-            dockerfile: Dockerfile.dev
-            context: ./client
-        # 끝
-        # image: constwon111/blued-frontend
+        image: constwon111/blued-frontend
         volumes:
             - /app/node_modules
             - ./client:/app
         stdin_open: true
-        # mem_limit: 128m
+        mem_limit: 128m
 
     nginx:
         restart: always
-        # 추가
-        build:
-            dockerfile: Dockerfile
-            context: ./nginx
+        image: constwon111/blued-nginx
         ports:
-            - "3000:80"
-            # 끝
-        # image: constwon111/blued-nginx
-        # ports:
-        #     - "80:80"
+            - "80:80"
+        mem_limit: 128m
+        links:
+            - client
+            - server
 
     server:
-        #   추가
-        build:
-            dockerfile: Dockerfile.dev
-            context: ./server
-        command: npm run start
-        # 끝
-
-        # image: constwon111/blued-backend
-        # container_name: blued_backend
+        image: constwon111/blued-backend
         volumes:
             - /app/node_modules
             - ./server:/app
-        # mem_limit: 128m
-        # environment:
-        #     # MYSQL_HOST: mysql
-        #     MYSQL_USER: root
-        #     MYSQL_ROOT_PASSWORD: tndtlf98
-        #     MYSQL_DATABASE: blued_donation
-        #     MYSQL_PORT: 3306
+        mem_limit: 128m
+        environment:
+            MYSQL_HOST: docker-blued-mysql.ctkxqf6wope7.us-east-1.rds.amazonaws.com
+            MYSQL_USER: root
+            MYSQL_ROOT_PASSWORD: tndtlf98
+            MYSQL_DATABASE: blued_donation
+            MYSQL_PORT: 3306
 
     # mysql:
     #     build: ./mysql

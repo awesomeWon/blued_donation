@@ -1,11 +1,19 @@
+// const dbConfig = {
+//     host: "mysql",
+//     user: "root",
+//     password: "tndtlf98",
+//     database: "blued_donation",
+//     // waitForConnections: true,
+//     connectionLimit: 10,
+//     port: "3306",
+// };
+
 const dbConfig = {
-    host: "mysql",
-    user: "root",
-    password: "tndtlf98",
-    database: "blued_donation",
-    // waitForConnections: true,
-    connectionLimit: 10,
-    port: "3306",
+    host: process.env.MYSQL_HOST,
+    user: process.env.MYSQL_USER,
+    password: process.env.MYSQL_ROOT_PASSWORD,
+    database: process.env.MYSQL_DATABASE,
+    port: process.env.MYSQL_PORT,
 };
 const awsConfig = {
     keyId: "lXneXjCWC9mEsLqskROY",
