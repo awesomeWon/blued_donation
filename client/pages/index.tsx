@@ -3,7 +3,7 @@ import Head from "next/head";
 import HomeListThumb from "../components/HomeListThumb";
 import Seo from "../components/Seo";
 
-const Index = () => {
+const Index = (props) => {
     return (
         <div>
             <Seo title="홈" />
