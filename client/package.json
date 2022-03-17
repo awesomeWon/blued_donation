@@ -23,7 +23,6 @@
         "@types/react": "^17.0.39",
         "eslint": "8.6.0",
         "eslint-config-next": "12.0.8",
-        "typescript": "^4.5.5",
-        "@next/swc-darwin-arm64": "^12.0.8"
+        "typescript": "^4.5.5"
     }
 }
