@@ -3,31 +3,31 @@ const API_KEY = process.env.API_KEY;
 module.exports = {
     // exportTrailingSlash: true,
     // exportPathMap: function () {
-    //     return {
-    //         "/my": { page: "/my" },
+    // return {
+    // "/": { page: "/index" },
     //         "/need": { page: "/need" },
     //         "/oAuth": { page: "/oAuth" },
     //         "/share": { page: "/share" },
     //         "/": { page: "/" }
     //         "/": { page: "/" }
     //         "/": { page: "/" }
-    //     };
+    // };
     // },
-    webpack(config) {
-        config.module.rules.push({
-            test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
-            use: {
-                loader: "url-loader",
-                options: {
-                    limit: 8192,
-                    publicPath: "/_next/static/",
-                    outputPath: "static/",
-                    name: "[name].[ext]",
-                },
-            },
-        });
-        return config;
-    },
+    // webpack(config) {
+    //     config.module.rules.push({
+    //         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+    //         use: {
+    //             loader: "url-loader",
+    //             options: {
+    //                 limit: 8192,
+    //                 publicPath: "/_next/static/",
+    //                 outputPath: "static/",
+    //                 name: "[name].[ext]",
+    //             },
+    //         },
+    //     });
+    //     return config;
+    // },
     images: {
         loader: "akamai",
         path: "/",
