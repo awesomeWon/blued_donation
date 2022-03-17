@@ -13,6 +13,8 @@ services:
         image: constwon111/blued-nginx
         ports:
             - "80:80"
+        depends_on:
+            - backend
 
     backend:
         image: constwon111/blued-backend
