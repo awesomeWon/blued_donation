@@ -13,10 +13,6 @@ services:
         image: constwon111/blued-nginx
         ports:
             - "80:80"
-        mem_limit: 128m
-        links:
-            - client
-            - server
 
     server:
         image: constwon111/blued-backend
