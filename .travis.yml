@@ -1,37 +1,37 @@
-language: generic
+# language: generic
 
-sudo: required
+# sudo: required
 
-services:
-    - docker
+# services:
+#     - docker
 
-before_install:
-    # - docker build -t constwon111/blued-fontend -f Dockerfile.dev .
+# before_install:
+#     # - docker build -t constwon111/blued-fontend -f Dockerfile.dev .
 
-    # - docker build -t constwon111/blued- -f ./client/Dockerfile.dev ./client
+#     # - docker build -t constwon111/blued- -f ./client/Dockerfile.dev ./client
 
-# script:
-#     - docker run -e CI=true constwon111/next-test-app npm run test
+# # script:
+# #     - docker run -e CI=true constwon111/next-test-app npm run test
 
-after_success:
-    - docker build -t constwon111/blued-frontend ./client
-    - docker build -t constwon111/blued-backend ./server
-    - docker build -t constwon111/blued-nginx ./nginx
+# after_success:
+#     - docker build -t constwon111/blued-frontend ./client
+#     - docker build -t constwon111/blued-backend ./server
+#     - docker build -t constwon111/blued-nginx ./nginx
 
-    - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
+#     - echo "$DOCKER_HUB_PASSWORD" | docker login -u "$DOCKER_HUB_ID" --password-stdin
 
-    - docker push constwon111/blued-frontend
-    - docker push constwon111/blued-backend
-    - docker push constwon111/blued-nginx
-# deploy:
-#     provider: elasticbeanstalk
-#     region: "us-east-1"
-#     app: "docker-fullstack-app"
-#     env: "DockerFullstackApp-env"
-#     bucket_name: elasticbeanstalk-us-east-1-250552661696
-#     bucket_path: "docker-fullstack-app"
-#     on:
-#         branch: main
+#     - docker push constwon111/blued-frontend
+#     - docker push constwon111/blued-backend
+#     - docker push constwon111/blued-nginx
+# # deploy:
+# #     provider: elasticbeanstalk
+# #     region: "us-east-1"
+# #     app: "docker-fullstack-app"
+# #     env: "DockerFullstackApp-env"
+# #     bucket_name: elasticbeanstalk-us-east-1-250552661696
+# #     bucket_path: "docker-fullstack-app"
+# #     on:
+# #         branch: main
 
-#     access_key_id: $AWS_ACCESS_KEY
-#     secret_access_key: $AWS_SECRET_ACCESS_KEY
+# #     access_key_id: $AWS_ACCESS_KEY
+# #     secret_access_key: $AWS_SECRET_ACCESS_KEY

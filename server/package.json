@@ -20,7 +20,6 @@
         "mysql2": "^2.3.3",
         "node-fetch": "^2.6.6",
         "nodemon": "^2.0.2",
-        "pug": "^3.0.2",
         "reflect-metadata": "^0.1.13",
         "sequelize": "^6.17.0",
         "sequelize-cli": "^6.4.1"
