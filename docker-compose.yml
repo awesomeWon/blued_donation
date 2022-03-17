@@ -1,6 +1,6 @@
 version: "3"
 services:
-    client:
+    frontend:
         image: constwon111/blued-frontend
         volumes:
             - /app/node_modules
@@ -13,7 +13,7 @@ services:
         ports:
             - "80:80"
 
-    server:
+    backend:
         image: constwon111/blued-backend
         volumes:
             - /app/node_modules
