@@ -1,16 +1,8 @@
 const API_KEY = process.env.API_KEY;
 
-
-{
-    "distDir": "build",
-    "exportTrailingSlash": true,
-    "assetPrefix": "https://~~~"
-  }
-
 module.exports = {
-    "distDir": "build",
-    "exportTrailingSlash": true,
-
+    // distDir: "build",
+    // exportTrailingSlash: true,
     // exportPathMap: async function (
     //     defaultPathMap,
     //     { dev, dir, outDir, distDir : build, buildId }
@@ -23,8 +15,6 @@ module.exports = {
     //       '/p/deploy-nextjs': { page: '/post', query: { title: 'deploy-nextjs' } },
     //     }
     //   },
-
-
     // reactStrictMode: true,
     // async redirects() {
     //     return [
@@ -35,9 +25,6 @@ module.exports = {
     //         },
     //     ];
     // },
- 
-
-
     // async rewrites() {
     //     return [
     //         // {
