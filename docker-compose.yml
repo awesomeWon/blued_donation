@@ -20,12 +20,12 @@ services:
             - /app/node_modules
             - ./server:/app
         mem_limit: 128m
-        environment:
-            MYSQL_HOST: docker-blued-mysql.ctkxqf6wope7.us-east-1.rds.amazonaws.com
-            MYSQL_USER: root
-            MYSQL_ROOT_PASSWORD: tndtlf98
-            MYSQL_DATABASE: blued_donation
-            MYSQL_PORT: 3306
+        # environment:
+        #     MYSQL_HOST: docker-blued-mysql.ctkxqf6wope7.us-east-1.rds.amazonaws.com
+        #     MYSQL_USER: root
+        #     MYSQL_ROOT_PASSWORD: tndtlf98
+        #     MYSQL_DATABASE: blued_donation
+        #     MYSQL_PORT: 3306
 
     # mysql:
     #     build: ./mysql
