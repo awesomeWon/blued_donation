@@ -43,6 +43,8 @@ pool.query(
     expires DATE )`
 );
 
+console.log("i am the proof of doing well");
+
 app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
