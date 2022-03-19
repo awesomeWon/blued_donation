@@ -1,6 +1,7 @@
-import * as dotenv from "dotenv";
+"use strict";
+exports.__esModule = true;
+var dotenv = require("dotenv");
 dotenv.config();
-
 module.exports = {
     development: {
         username: process.env.DB_USER,
@@ -9,10 +10,10 @@ module.exports = {
         host: process.env.DB_HOST,
         dialect: process.env.DB_Dialect,
         define: {
-            freezeTableName: true, // sequelize는 복수형으로 table을 만드는데 그것을 방지한다.
+            freezeTableName: true,
             createdAt: "created_at",
-            updatedAt: "updated_at",
-        },
+            updatedAt: "updated_at"
+        }
     },
     test: {
         username: process.env.DB_USER,
@@ -23,8 +24,8 @@ module.exports = {
         define: {
             freezeTableName: true,
             createdAt: "created_at",
-            updatedAt: "updated_at",
-        },
+            updatedAt: "updated_at"
+        }
     },
     production: {
         username: process.env.DB_USER,
@@ -35,11 +36,10 @@ module.exports = {
         define: {
             freezeTableName: true,
             createdAt: "created_at",
-            updatedAt: "updated_at",
-        },
-    },
+            updatedAt: "updated_at"
+        }
+    }
 };
-
 // module.exports = {
 //     development: {
 //         username: "root",
