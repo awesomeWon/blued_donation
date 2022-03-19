@@ -29,6 +29,9 @@ services:
             MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
             MYSQL_DATABASE: $MYSQL_DATABASE
             MYSQL_PORT: $MYSQL_PORT
+            MONGO_URI: $MONGO_URI
+            KAKAO_KEY: $KAKAO_KEY
+            KAKAO_CS: $KAKAO_CS
 
     # mysql:
     #     build: ./mysql
