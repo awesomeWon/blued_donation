@@ -35,7 +35,7 @@
     },
     "scripts": {
         "build": "tsc -p .",
-        "start": "pm2 start app.js --watch",
+        "start": "nodemon app.js",
         "dev1": "nodemon app.ts",
         "dev": "concurrently \"npm run start\" \"cd ../ && npm run dev --prefix client\""
     }

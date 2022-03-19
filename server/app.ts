@@ -43,8 +43,8 @@ pool.query(
     expires DATE )`
 );
 
-console.log("i am the proof of doing well");
-console.log(process.env.MYSQL_USER);
+// console.log("i am the proof of doing well");
+// console.log(process.env.MYSQL_USER);
 pool.query(`SHOW DATABASES`, (err, results, fields) => {
     if (err) console.log(err);
     if (results) console.log(results);

@@ -26,8 +26,8 @@ app.use(session({
     }
 }));
 pool.query("CREATE TABLE user (\n    id INTEGER AUTO_INCREMENT UNIQUE  PRIMARY KEY,\n    provider VARCHAR(100),\n    name VARCHAR(10),\n    state VARCHAR(20),\n    oAuthToken VARCHAR(100),\n    token VARCHAR(100),\n    expires DATE )");
-console.log("i am the proof of doing well");
-console.log(process.env.MYSQL_USER);
+// console.log("i am the proof of doing well");
+// console.log(process.env.MYSQL_USER);
 pool.query("SHOW DATABASES", function (err, results, fields) {
     if (err)
         console.log(err);
